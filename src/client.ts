@@ -99,7 +99,7 @@ export async function apiGet(
 ) {
 	const client = createClient();
 	const query = params
-		? `?input=${encodeURIComponent(JSON.stringify(params))}`
+		? `?input=${encodeURIComponent(JSON.stringify({ json: params }))}`
 		: "";
 	const response = await client.get(`/trpc/${endpoint}${query}`);
 	return response.data?.result?.data?.json ?? response.data;
