@@ -49,6 +49,7 @@
     "prebuild": "pnpm run generate",
     "dev": "tsx src/index.ts",
     "lint": "biome check --write .",
+    "prepare": "tsx scripts/generate.ts && tsc -b && chmod +x dist/index.js",
     "test": "vitest run"
   },
   "types": "dist/index.d.ts",
